@@ -3,6 +3,7 @@ package se.magnus.microservices.core.recommendation.services;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 import se.magnus.api.core.recommendation.Recommendation;
 import se.magnus.api.core.recommendation.RecommendationService;
 import se.magnus.api.exceptions.InvalidInputException;
@@ -11,7 +12,7 @@ import se.magnus.util.http.ServiceUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@RestController
 public class RecommendationServiceImpl implements RecommendationService {
     private static final Logger LOG = LoggerFactory.getLogger(RecommendationServiceImpl.class);
 

@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
         if(productId<1){
             throw new InvalidInputException("Invalid productId"+productId);
         }
-        if(productId<13){
+        if(productId==13){
             throw new InvalidInputException("No product found "+productId);
         }
         return new  Product(productId,"name-"+productId,123,serviceUtil.getServiceAddress());
