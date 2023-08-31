@@ -16,8 +16,6 @@ public class ProductServiceImpl implements ProductService {
     public ProductServiceImpl(ServiceUtil serviceUtil) {
         this.serviceUtil = serviceUtil;
     }
-
-
     @Override
     public Product getProduct(int productId) {
 
