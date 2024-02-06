@@ -49,12 +49,11 @@ throw new InvalidInputException("Duplicate Key, Product Id: " +body.getProductId
 
         List<ReviewEntity> entityList=repository.findByProductId(productId);
 
-        List<Review> list = new ArrayList<>();
-        list.add(new Review(productId, 1, "Author 1", "Subject 1", "Content 1", serviceUtil.getServiceAddress()));
-        list.add(new Review(productId, 2, "Author 2", "Subject 2", "Content 2", serviceUtil.getServiceAddress()));
-        list.add(new Review(productId, 3, "Author 3", "Subject 3", "Content 3", serviceUtil.getServiceAddress()));
+        List<Review> list = mapper.entityListToApiList(entityList);
 
-        LOG.debug("/reviews response size: {}", list.size());
+        list.forEach(e -> e.setServiceAddress(serviceUtil.getServiceAddress()));
+
+        LOG.debug("getReviews: response size: {}",list.size());
 
         return list;
     }
