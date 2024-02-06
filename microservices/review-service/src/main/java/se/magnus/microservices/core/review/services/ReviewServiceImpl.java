@@ -10,8 +10,6 @@ import se.magnus.api.exceptions.InvalidInputException;
 import se.magnus.microservices.core.review.persistence.ReviewEntity;
 import se.magnus.microservices.core.review.persistence.ReviewRepository;
 import se.magnus.util.http.ServiceUtil;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReviewServiceImpl implements ReviewService {
