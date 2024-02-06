@@ -60,6 +60,7 @@ throw new InvalidInputException("Duplicate Key, Product Id: " +body.getProductId
 
     @Override
     public void deleteReviews(int productId) {
-
+        LOG.debug("deleteReviews: tries to delete reviews for the product with productid {}",productId);
+        repository.deleteAll(repository.findByProductId(productId));
     }
 }
